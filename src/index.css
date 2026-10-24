@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --card2: #f8fafc;
+  --p1: #1e6bff;
+  --p2: #ff7a00;
+  --p3: #0f172a;
+  --txt: #0f172a;
+  --mut: #64748b;
+  --ok: #16a34a;
+  --warn: #ea580c;
+  --bad: #dc2626;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient glow orbs on light background */
+.bg-ambient-blue {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+  opacity: 0.12;
+  background: #1e6bff;
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.bg-ambient-orange {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+  opacity: 0.10;
+  background: #ff7a00;
+  bottom: -100px;
+  left: -100px;
+  pointer-events: none;
+}
+
+/* Custom scrollbars for light theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-up {
+  animation: up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
